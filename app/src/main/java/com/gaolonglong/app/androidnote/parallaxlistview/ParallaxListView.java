@@ -1,4 +1,4 @@
-package com.gaolonglong.app.androidnote;
+package com.gaolonglong.app.androidnote.parallaxlistview;
 
 import android.animation.ValueAnimator;
 import android.content.Context;

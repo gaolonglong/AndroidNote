@@ -1,4 +1,4 @@
-package com.gaolonglong.app.androidnote;
+package com.gaolonglong.app.androidnote.toolbar;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
+
+import com.gaolonglong.app.androidnote.R;
 
 /**
  * Created by gaohailong on 2016/10/12.

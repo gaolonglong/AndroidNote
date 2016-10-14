@@ -1,4 +1,4 @@
-package com.gaolonglong.app.androidnote;
+package com.gaolonglong.app.androidnote.parallaxlistview;
 
 /**
  * Created by gaohailong on 2016/9/19.

@@ -15,6 +15,11 @@ import android.view.ViewTreeObserver;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 
+import com.gaolonglong.app.androidnote.guide.GuideActivity;
+import com.gaolonglong.app.androidnote.parallaxlistview.Cheeses;
+import com.gaolonglong.app.androidnote.parallaxlistview.ParallaxListView;
+import com.gaolonglong.app.androidnote.toolbar.ToolbarActivity;
+
 public class MainActivity extends AppCompatActivity {
 
     private ParallaxListView parallaxListView;
@@ -41,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         final View headerView = View.inflate(this, R.layout.layout_header, null);
         headerImage = (ImageView) headerView.findViewById(R.id.header_image);
         parallaxListView.addHeaderView(headerView);
-        parallaxListView.setAdapter(new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,Cheeses.USER_NAME));
+        parallaxListView.setAdapter(new ArrayAdapter<>(this,android.R.layout.simple_list_item_1, Cheeses.USER_NAME));
 
         headerImage.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @TargetApi(Build.VERSION_CODES.JELLY_BEAN)

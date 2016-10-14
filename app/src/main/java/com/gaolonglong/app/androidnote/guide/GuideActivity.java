@@ -1,4 +1,4 @@
-package com.gaolonglong.app.androidnote;
+package com.gaolonglong.app.androidnote.guide;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -14,6 +14,8 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+
+import com.gaolonglong.app.androidnote.R;
 
 import java.util.ArrayList;
 import java.util.List;
