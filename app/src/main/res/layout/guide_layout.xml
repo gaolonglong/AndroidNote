@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <RelativeLayout
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:padding="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:src="@drawable/guide_view_uncheck_icon"
+            android:layout_width="12dp"
+            android:layout_height="12dp" />
+
+        <ImageView
+            android:src="@drawable/guide_view_uncheck_icon"
+            android:layout_marginLeft="25dp"
+            android:layout_width="12dp"
+            android:layout_height="12dp" />
+
+        <ImageView
+            android:src="@drawable/guide_view_uncheck_icon"
+            android:layout_marginLeft="50dp"
+            android:layout_width="12dp"
+            android:layout_height="12dp" />
+
+        <ImageView
+            android:id="@+id/move_dot"
+            android:src="@drawable/guide_view_two_check_icon"
+            android:layout_width="12dp"
+            android:layout_height="12dp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
