@@ -1,6 +1,7 @@
 package com.gaolonglong.app.androidnote.guide;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.view.PagerAdapter;
@@ -10,11 +11,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
+import com.gaolonglong.app.androidnote.MainActivity;
 import com.gaolonglong.app.androidnote.R;
 
 import java.util.ArrayList;
@@ -26,6 +29,8 @@ import java.util.List;
 public class GuideActivity extends Activity {
     private ViewPager viewPager;
     private ImageView imageDot;
+    private RelativeLayout indicatorZone;
+    private Button goMain;
     private List<View> imageDots;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -37,6 +42,8 @@ public class GuideActivity extends Activity {
 
         viewPager = (ViewPager) findViewById(R.id.view_pager);
         imageDot = (ImageView) findViewById(R.id.move_dot);
+        indicatorZone = (RelativeLayout) findViewById(R.id.indicator_zone);
+        goMain = (Button) findViewById(R.id.btn_go_main);
 
         imageDots = new ArrayList<>();
         imageDots.add(View.inflate(this, R.layout.guide_item01,null));
@@ -79,12 +86,25 @@ public class GuideActivity extends Activity {
 
             @Override
             public void onPageSelected(int position) {
-
+                if (position == 2){
+                    indicatorZone.setVisibility(View.GONE);
+                    goMain.setVisibility(View.VISIBLE);
+                }else {
+                    indicatorZone.setVisibility(View.VISIBLE);
+                    goMain.setVisibility(View.GONE);
+                }
             }
 
             @Override
             public void onPageScrollStateChanged(int state) {
 
+            }
+        });
+
+        goMain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }

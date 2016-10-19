@@ -1,61 +1,37 @@
 package com.gaolonglong.app.androidnote;
 
-import android.annotation.TargetApi;
-import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.ViewTreeObserver;
-import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 
-import com.gaolonglong.app.androidnote.guide.GuideActivity;
-import com.gaolonglong.app.androidnote.parallaxlistview.Cheeses;
-import com.gaolonglong.app.androidnote.parallaxlistview.ParallaxListView;
-import com.gaolonglong.app.androidnote.toolbar.ToolbarActivity;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ParallaxListView parallaxListView;
-    private ImageView headerImage;
+    private RecyclerView recyclerView;
+    private List<String> titleList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //Toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        //RecyclerView
+        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        titleList = new ArrayList<>();
+        titleList.add("Toolbar的简单使用");
+        titleList.add("引导页的Demo");
+        titleList.add("视差ListView");
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),GuideActivity.class));
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
-        parallaxListView = (ParallaxListView) findViewById(R.id.list_view);
-        final View headerView = View.inflate(this, R.layout.layout_header, null);
-        headerImage = (ImageView) headerView.findViewById(R.id.header_image);
-        parallaxListView.addHeaderView(headerView);
-        parallaxListView.setAdapter(new ArrayAdapter<>(this,android.R.layout.simple_list_item_1, Cheeses.USER_NAME));
-
-        headerImage.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-            @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
-            @Override
-            public void onGlobalLayout() {
-                parallaxListView.setParallaxImage(headerImage);
-                headerImage.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-            }
-        });
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false));
+        recyclerView.setAdapter(new MainAdapter(this,titleList));
 
     }
 
@@ -75,7 +51,6 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            startActivity(new Intent(MainActivity.this,ToolbarActivity.class));
             return true;
         }
 
