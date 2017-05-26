@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.gaolonglong.app.androidnote.view.MarqueeTextView
+        android:id="@+id/paomadeng"
+        android:text="此去西洋，深知中国自强之计，舍此无所他求。背负国家之未来，取尽洋人之科学。赴七万里长途，别祖国父母之邦，奋然无悔。"
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.gaolonglong.app.androidnote.view.MarqueeTextView
+        android:id="@+id/paomadeng2"
+        android:text="此去西洋，深知中国自强之计，舍此无所他求。背负国家之未来，取尽洋人之科学。赴七万里长途，别祖国父母之邦，奋然无悔。"
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
